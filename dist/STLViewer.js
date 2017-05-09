@@ -14,9 +14,7 @@ var _Three = require('./Three');
 
 var _Three2 = _interopRequireDefault(_Three);
 
-var _ScaleLoader = require('halogen/ScaleLoader');
-
-var _ScaleLoader2 = _interopRequireDefault(_ScaleLoader);
+var _betterReactSpinkit = require('better-react-spinkit');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -310,8 +308,7 @@ var STLViewer = function (_Component) {
 		value: function render() {
 			var _props2 = this.props,
 			    width = _props2.width,
-			    height = _props2.height,
-			    modelColor = _props2.modelColor;
+			    height = _props2.height;
 
 
 			return _react2.default.createElement(
@@ -323,7 +320,7 @@ var STLViewer = function (_Component) {
 				_react2.default.createElement(
 					'div',
 					{ style: { textAlign: 'center', marginTop: height / 2 - 8 } },
-					_react2.default.createElement(_ScaleLoader2.default, { color: modelColor, size: '16px' })
+					_react2.default.createElement(_betterReactSpinkit.FadingCircle, { color: '#014477', size: '22' })
 				)
 			);
 		}

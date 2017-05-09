@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import ReactDOM  from 'react-dom';
 import THREE from './Three';
-import Loader from 'halogen/ScaleLoader';
+import { FadingCircle } from 'better-react-spinkit';
 let OrbitControls = require('three-orbit-controls')(THREE);
 
 class STLViewer extends Component {
@@ -272,15 +272,21 @@ class STLViewer extends Component {
 	}
 
 	render() {
-		const {width, height, modelColor} = this.props;
+		const {width, height} = this.props;
 
 		return(
 			<div
 				className={this.props.className}
 				style={{ width: width, height: height }}
 			>
-				<div style={{textAlign: 'center', marginTop: height/2 - 8 }} >
-					<Loader color={modelColor} size="16px" />
+				<div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+					height: `${width}px`,
+					width: `${height}px`
+				}}>
+					<FadingCircle color="#014477" size="22" />
 				</div>
 			</div>
 		);
